@@ -1,16 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://4le1udfnowwh"]
+[gd_scene load_steps=2 format=3 uid="uid://4le1udfnowwh"]
 
-[ext_resource type="Texture2D" uid="uid://i8txw621c4oi" path="res://test2.png" id="1_pd2f0"]
-[ext_resource type="Texture2D" uid="uid://bw7y6vnjpq8hx" path="res://cloudynight.png" id="2_2utuo"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vs7i8"]
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="Theme" id="Theme_1udbf"]
-Label/font_sizes/font_size = 20
-Label/styles/normal = SubResource("StyleBoxFlat_vs7i8")
+[ext_resource type="Script" path="res://main.gd" id="1_6xdax"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -21,26 +11,10 @@ offset_top = 64.0
 offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6xdax")
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -639.0
-offset_top = -860.0
-offset_right = 721.0
-offset_bottom = 913.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_pd2f0")
-expand_mode = 1
-stretch_mode = 6
-
-[node name="TabContainer" type="TabContainer" parent="."]
+[node name="MainMenu" type="TabContainer" parent="."]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -52,78 +26,18 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(1.1, 1.1)
 tab_alignment = 1
+current_tab = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Cities" type="TabBar" parent="TabContainer"]
+[node name="Cities" type="TabBar" parent="MainMenu"]
+visible = false
 layout_mode = 2
 
-[node name="Current" type="TabBar" parent="TabContainer"]
+[node name="Current" type="TabBar" parent="MainMenu"]
 layout_mode = 2
 
-[node name="History" type="TabBar" parent="TabContainer"]
+[node name="History" type="TabBar" parent="MainMenu"]
+visible = false
 layout_mode = 2
 
-[node name="WeatherIconDisplay" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -92.0
-offset_right = 92.0
-offset_bottom = 184.0
-grow_horizontal = 2
-texture = ExtResource("2_2utuo")
-expand_mode = 1
-
-[node name="DayDisplay" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_top = 194.0
-offset_right = 167.0
-offset_bottom = 416.0
-
-[node name="Label" type="Label" parent="DayDisplay"]
-layout_mode = 2
-theme = SubResource("Theme_1udbf")
-text = "Monday
-"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="DayDisplay"]
-layout_mode = 2
-theme = SubResource("Theme_1udbf")
-text = "Tuesday
-"
-horizontal_alignment = 1
-
-[node name="Label3" type="Label" parent="DayDisplay"]
-layout_mode = 2
-theme = SubResource("Theme_1udbf")
-text = "Wednesday
-"
-horizontal_alignment = 1
-
-[node name="Label4" type="Label" parent="DayDisplay"]
-layout_mode = 2
-theme = SubResource("Theme_1udbf")
-text = "Thursday
-"
-horizontal_alignment = 1
-
-[node name="Label5" type="Label" parent="DayDisplay"]
-layout_mode = 2
-theme = SubResource("Theme_1udbf")
-text = "Friday
-"
-horizontal_alignment = 1
-
-[node name="Label6" type="Label" parent="DayDisplay"]
-layout_mode = 2
-theme = SubResource("Theme_1udbf")
-text = "Saturday"
-horizontal_alignment = 1
-
-[node name="Label7" type="Label" parent="DayDisplay"]
-layout_mode = 2
-theme = SubResource("Theme_1udbf")
-text = "Sunday"
-horizontal_alignment = 1
+[connection signal="tab_changed" from="MainMenu" to="." method="_on_tab_container_tab_changed"]
