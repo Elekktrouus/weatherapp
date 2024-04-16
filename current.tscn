@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7jo65em7pob8"]
+[gd_scene load_steps=5 format=3 uid="uid://b7jo65em7pob8"]
 
 [ext_resource type="Texture2D" uid="uid://i8txw621c4oi" path="res://test2.png" id="1_0ln56"]
+[ext_resource type="Script" path="res://current.gd" id="1_h0vjb"]
 [ext_resource type="Texture2D" uid="uid://bw7y6vnjpq8hx" path="res://cloudynight.png" id="2_idooq"]
 [ext_resource type="Theme" uid="uid://baepfpkf4yyts" path="res://main.tres" id="3_tmtb1"]
 
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_h0vjb")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -163,3 +165,5 @@ theme_override_font_sizes/font_size = 40
 text = "Burnaby"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]

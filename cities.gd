@@ -13,3 +13,4 @@ func _process(delta):
 
 func _on_item_list_item_selected(index):
 	Globalvars.cityname = $ItemList.get_item_text(index)
+	print(Globalvars.cityname)
