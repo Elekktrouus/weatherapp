@@ -44,6 +44,25 @@ grow_horizontal = 2
 texture = ExtResource("2_idooq")
 expand_mode = 1
 
+[node name="CurrentTemp" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -188.0
+offset_right = 41.0
+offset_bottom = -92.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "..."
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
 [node name="DayDisplay" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 9
@@ -52,51 +71,47 @@ offset_top = 223.0
 offset_right = 112.0
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="DayDisplay"]
+[node name="0" type="Label" parent="DayDisplay"]
 layout_mode = 2
 theme = ExtResource("3_tmtb1")
-text = "Monday
+text = "Loading
 "
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="DayDisplay"]
+[node name="1" type="Label" parent="DayDisplay"]
 layout_mode = 2
 theme = ExtResource("3_tmtb1")
-text = "Tuesday
-"
+text = "Loading"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="DayDisplay"]
+[node name="2" type="Label" parent="DayDisplay"]
 layout_mode = 2
 theme = ExtResource("3_tmtb1")
-text = "Wednesday
-"
+text = "Loading"
 horizontal_alignment = 1
 
-[node name="Label4" type="Label" parent="DayDisplay"]
+[node name="3" type="Label" parent="DayDisplay"]
 layout_mode = 2
 theme = ExtResource("3_tmtb1")
-text = "Thursday
-"
+text = "Loading"
 horizontal_alignment = 1
 
-[node name="Label5" type="Label" parent="DayDisplay"]
+[node name="4" type="Label" parent="DayDisplay"]
 layout_mode = 2
 theme = ExtResource("3_tmtb1")
-text = "Friday
-"
+text = "Loading"
 horizontal_alignment = 1
 
-[node name="Label6" type="Label" parent="DayDisplay"]
+[node name="5" type="Label" parent="DayDisplay"]
 layout_mode = 2
 theme = ExtResource("3_tmtb1")
-text = "Saturday"
+text = "Loading"
 horizontal_alignment = 1
 
-[node name="Label7" type="Label" parent="DayDisplay"]
+[node name="6" type="Label" parent="DayDisplay"]
 layout_mode = 2
 theme = ExtResource("3_tmtb1")
-text = "Sunday"
+text = "Loading"
 horizontal_alignment = 1
 
 [node name="TempDisplay" type="VBoxContainer" parent="."]
@@ -110,49 +125,53 @@ offset_top = 223.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="TempDisplay"]
+[node name="0" type="Label" parent="TempDisplay"]
 layout_mode = 2
 theme = ExtResource("3_tmtb1")
-text = "15-20
+text = "Loading
 "
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="TempDisplay"]
+[node name="1" type="Label" parent="TempDisplay"]
 layout_mode = 2
 theme = ExtResource("3_tmtb1")
-text = "9-10"
-horizontal_alignment = 1
-
-[node name="Label3" type="Label" parent="TempDisplay"]
-layout_mode = 2
-theme = ExtResource("3_tmtb1")
-text = "11-22
+text = "Loading
 "
 horizontal_alignment = 1
 
-[node name="Label4" type="Label" parent="TempDisplay"]
+[node name="2" type="Label" parent="TempDisplay"]
 layout_mode = 2
 theme = ExtResource("3_tmtb1")
-text = "19-25
+text = "Loading
 "
 horizontal_alignment = 1
 
-[node name="Label5" type="Label" parent="TempDisplay"]
+[node name="3" type="Label" parent="TempDisplay"]
 layout_mode = 2
 theme = ExtResource("3_tmtb1")
-text = "20-25"
+text = "Loading
+"
 horizontal_alignment = 1
 
-[node name="Label6" type="Label" parent="TempDisplay"]
+[node name="4" type="Label" parent="TempDisplay"]
 layout_mode = 2
 theme = ExtResource("3_tmtb1")
-text = "15-20"
+text = "Loading
+"
 horizontal_alignment = 1
 
-[node name="Label7" type="Label" parent="TempDisplay"]
+[node name="5" type="Label" parent="TempDisplay"]
 layout_mode = 2
 theme = ExtResource("3_tmtb1")
-text = "10-20"
+text = "Loading
+"
+horizontal_alignment = 1
+
+[node name="6" type="Label" parent="TempDisplay"]
+layout_mode = 2
+theme = ExtResource("3_tmtb1")
+text = "Loading
+"
 horizontal_alignment = 1
 
 [node name="CityName" type="Label" parent="."]
@@ -165,5 +184,12 @@ theme_override_font_sizes/font_size = 40
 text = "Burnaby"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="UpdateIn" type="Label" parent="."]
+layout_mode = 0
+offset_top = 448.0
+offset_right = 176.0
+offset_bottom = 471.0
+text = "Update in null seconds"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
