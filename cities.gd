@@ -1,10 +1,10 @@
 extends Control
+var cities = ["Burnaby","Vancouver","Seattle","Victoria","Delta","Nanaimo"] #List
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	$CityName.text = (Globalvars.cityname)
+	for i in cities: #Iterative loop
+		$ItemList.add_item(i)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -13,4 +13,5 @@ func _process(delta):
 
 func _on_item_list_item_selected(index):
 	Globalvars.cityname = $ItemList.get_item_text(index)
+	$CityName.text = (Globalvars.cityname)
 	print(Globalvars.cityname)

@@ -26,4 +26,4 @@ window/size/viewport_height=600
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"

@@ -46,17 +46,14 @@ expand_mode = 1
 
 [node name="CurrentTemp" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -55.0
-offset_top = -188.0
+offset_top = 104.0
 offset_right = 41.0
-offset_bottom = -92.0
+offset_bottom = 200.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "..."
 horizontal_alignment = 1
@@ -176,14 +173,16 @@ horizontal_alignment = 1
 
 [node name="CityName" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.0916667
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -81.0
+offset_right = 81.0
+offset_bottom = 55.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 40
 text = "Burnaby"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="UpdateIn" type="Label" parent="."]
 layout_mode = 0
@@ -193,3 +192,9 @@ offset_bottom = 471.0
 text = "Update in null seconds"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,13 +1,11 @@
 extends Control
 @onready var currentdate = Time.get_datetime_dict_from_system()
 @onready var day = currentdate
+@onready var history = "user://history.json"
 func _ready():
 	$CityName.text = (Globalvars.cityname)
 	getForecast(Globalvars.cityname, 7)
-	var timer = get_tree().create_timer(60)
-	while true:
-		await timer.timeout
-		getForecast(Globalvars.cityname, 7)
+
 func getForecast(cityname, days):
 		var requester = HTTPRequest.new()
 		add_child(requester)
@@ -20,4 +18,10 @@ func _on_request_completed(result, response_code, headers, body):
 		$DayDisplay.get_child(i).text = (str(json["forecast"]["forecastday"][i]["date"]))
 		$TempDisplay.get_child(i).text = ((str(round(json["forecast"]["forecastday"][i]["day"]["mintemp_c"]))+"°")+" | "+(str(round(json["forecast"]["forecastday"][i]["day"]["maxtemp_c"]))+"°"))
 func _process(delta):
-	pass
+	if (round($Timer.time_left)) != 1:
+		$UpdateIn.text = ("Update in "+str(round($Timer.time_left))+" seconds.")
+	else:
+		$UpdateIn.text = ("Update in "+str(round($Timer.time_left))+" second.")
+func _on_timer_timeout():
+	getForecast(Globalvars.cityname, 7)
+	$Timer.start()
