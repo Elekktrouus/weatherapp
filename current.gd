@@ -14,7 +14,7 @@ func getForecast(cityname, days):
 func _on_request_completed(result, response_code, headers, body):
 	var json = JSON.parse_string(body.get_string_from_utf8())
 	$CurrentTemp.text = (str(round(json["current"]["temp_c"]))+"°")
-	for i in 7:
+	for i in $TempDisplay.get_child_count():
 		$DayDisplay.get_child(i).text = (str(json["forecast"]["forecastday"][i]["date"]))
 		$TempDisplay.get_child(i).text = ((str(round(json["forecast"]["forecastday"][i]["day"]["mintemp_c"]))+"°")+" | "+(str(round(json["forecast"]["forecastday"][i]["day"]["maxtemp_c"]))+"°"))
 func _process(delta):

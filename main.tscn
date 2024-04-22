@@ -36,8 +36,4 @@ layout_mode = 2
 [node name="Current" type="TabBar" parent="MainMenu"]
 layout_mode = 2
 
-[node name="History" type="TabBar" parent="MainMenu"]
-visible = false
-layout_mode = 2
-
 [connection signal="tab_changed" from="MainMenu" to="." method="_on_tab_container_tab_changed"]

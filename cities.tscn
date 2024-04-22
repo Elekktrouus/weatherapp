@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://cities.gd" id="1_3j5sm"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_vfhas"]
+[sub_resource type="BoxMesh" id="BoxMesh_5b1w3"]
 
 [node name="Cities" type="Control"]
 layout_mode = 3
@@ -60,26 +60,42 @@ theme_override_font_sizes/font_size = 25
 transform = Transform3D(1, 0, 0, 0, 0.979038, 0.203676, 0, -0.203676, 0.979038, 0.820006, 2.15053, 3.61693)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Node3D/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 0.979038, -0.203676, 0, 0.203676, 0.979038, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.979038, -0.203676, 0, 0.203676, 0.979038, 0, 3.34564, -1.14322)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(2.46118, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0148335, 0)
-mesh = SubResource("CapsuleMesh_vfhas")
+transform = Transform3D(6.80118, 0, 0, 0, 0.365906, 0, 0, 0, 3.405, 0, 0, 0)
+mesh = SubResource("BoxMesh_5b1w3")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.574222, -0.760746, -1.48755)
-mesh = SubResource("CapsuleMesh_vfhas")
+transform = Transform3D(0.909494, 0, 0, 0, 3.36693, 0, 0, 0, 0.962756, -2.70831, 1.51268, -1.4765)
+mesh = SubResource("BoxMesh_5b1w3")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.116483, 0.593274, -0.606602)
-mesh = SubResource("CapsuleMesh_vfhas")
+transform = Transform3D(0.909494, 0, 0, 0, 3.36693, 0, 0, 0, 0.962756, -1.62492, 1.16196, -0.760478)
+mesh = SubResource("BoxMesh_5b1w3")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(2.33207, 0, 0, 0, 2.28858, 0, 0, 0, 2.57345, 1.79203, 0.0762548, -1.00759)
-mesh = SubResource("CapsuleMesh_vfhas")
+transform = Transform3D(0.909494, 0, 0, 0, 3.36693, 0, 0, 0, 0.962756, -0.868682, 1.54466, -2.34057)
+mesh = SubResource("BoxMesh_5b1w3")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.688434, -0.488747, -2.33842)
-mesh = SubResource("CapsuleMesh_vfhas")
+transform = Transform3D(0.909494, 0, 0, 0, 3.36693, 0, 0, 0, 0.962756, -0.0501997, 0.964906, -0.928899)
+mesh = SubResource("BoxMesh_5b1w3")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.909494, 0, 0, 0, 3.36693, 0, 0, 0, 0.962756, 1.04889, 1.41055, -0.387665)
+mesh = SubResource("BoxMesh_5b1w3")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.909494, 0, 0, 0, 3.36693, 0, 0, 0, 0.962756, 0.585925, 1.41055, -2.1943)
+mesh = SubResource("BoxMesh_5b1w3")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.909494, 0, 0, 0, 3.36693, 0, 0, 0, 0.962756, 2.41411, 1.72426, -1.75995)
+mesh = SubResource("BoxMesh_5b1w3")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.909494, 0, 0, 0, 3.36693, 0, 0, 0, 0.962756, 2.82902, 0.992898, -0.00569725)
+mesh = SubResource("BoxMesh_5b1w3")
 
 [connection signal="item_selected" from="ItemList" to="." method="_on_item_list_item_selected"]

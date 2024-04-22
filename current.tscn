@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7jo65em7pob8"]
+[gd_scene load_steps=4 format=3 uid="uid://b7jo65em7pob8"]
 
 [ext_resource type="Texture2D" uid="uid://i8txw621c4oi" path="res://test2.png" id="1_0ln56"]
 [ext_resource type="Script" path="res://current.gd" id="1_h0vjb"]
-[ext_resource type="Texture2D" uid="uid://bw7y6vnjpq8hx" path="res://cloudynight.png" id="2_idooq"]
 [ext_resource type="Theme" uid="uid://baepfpkf4yyts" path="res://main.tres" id="3_tmtb1"]
 
 [node name="Current" type="Control"]
@@ -31,28 +30,12 @@ texture = ExtResource("1_0ln56")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="WeatherIconDisplay" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -92.0
-offset_top = 40.0002
-offset_right = 92.0
-offset_bottom = 224.0
-grow_horizontal = 2
-texture = ExtResource("2_idooq")
-expand_mode = 1
-
 [node name="CurrentTemp" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -55.0
-offset_top = 104.0
-offset_right = 41.0
-offset_bottom = 200.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 96.0
+offset_bottom = 165.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 50
 text = "..."
