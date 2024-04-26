@@ -7,10 +7,14 @@ func _ready():
 	getForecast(Globalvars.cityname, 7)
 
 func getForecast(cityname, days):
+	if $CheckButton.button_pressed:
+		$UpdateIn.show()
 		var requester = HTTPRequest.new()
 		add_child(requester)
 		requester.request_completed.connect(_on_request_completed)
 		requester.request(str("http://api.weatherapi.com/v1/forecast.json?key=", Globalvars.apikey, "&q=", "canada/",cityname, "&days=", days, "&aqi=no&alerts=no"))
+	else:
+		$UpdateIn.hide()
 func _on_request_completed(result, response_code, headers, body):
 	var json = JSON.parse_string(body.get_string_from_utf8())
 	$CurrentTemp.text = (str(round(json["current"]["temp_c"]))+"°")
