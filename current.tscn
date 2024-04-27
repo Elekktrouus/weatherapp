@@ -180,12 +180,20 @@ text = "Update in null seconds"
 wait_time = 60.0
 autostart = true
 
-[node name="CheckButton" type="CheckButton" parent="."]
+[node name="IsUpdate" type="CheckButton" parent="."]
 layout_mode = 0
 offset_top = 471.0
 offset_right = 105.0
 offset_bottom = 502.0
 button_pressed = true
 text = "Update"
+
+[node name="IsThreeDay" type="CheckButton" parent="."]
+layout_mode = 0
+offset_top = 502.0
+offset_right = 105.0
+offset_bottom = 533.0
+button_pressed = true
+text = "3 Day Mode"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
